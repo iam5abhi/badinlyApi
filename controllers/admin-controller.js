@@ -136,7 +136,7 @@ const  adminLogin = async(req, res, next) => {
 
  let isValidPassword = false; 
  try{
-      //  isValidPassword = await bcrypt.compare(password, admin.password)
+      isValidPassword = await bcrypt.compare(password, admin.password)
  }
  catch(err){
   const error = await new HttpError("invalid credentials try again",500)
